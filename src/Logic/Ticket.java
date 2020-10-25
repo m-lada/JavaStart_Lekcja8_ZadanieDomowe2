@@ -10,6 +10,10 @@ public class Ticket {
     private int id;
     private static int ticketNumber;
 
+    public final static String TICKET_ONLINE = "bilet internetowy";
+    public final static String TICKET_STANDARD = "bilet standardowy";
+    public final static String TICKET_GIFT = "bilet prezentowy";
+
     public Ticket(String eventName, String adress, double primaryPrice, double discount) {
         this.eventName = eventName;
         this.adress = adress;

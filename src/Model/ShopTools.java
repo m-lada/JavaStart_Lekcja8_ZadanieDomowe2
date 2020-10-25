@@ -66,9 +66,9 @@ public class ShopTools {
         input.nextLine();
 
         System.out.println("Wybierz bilet: ");
-        System.out.println(ticketOnline + " - bilet internetowy");
-        System.out.println(ticketStandard + " - bilet standardowy");
-        System.out.println(ticketGift + " - bilet prezentowy");
+        System.out.println(ticketOnline + " - " + Ticket.TICKET_ONLINE);
+        System.out.println(ticketStandard + " - " + Ticket.TICKET_STANDARD);
+        System.out.println(ticketGift + " - " + Ticket.TICKET_GIFT);
         int scaner = input.nextInt();
         switch (scaner) {
             case ticketOnline:
@@ -85,7 +85,7 @@ public class ShopTools {
                 shop.addTicketGift(Ticket.getTicketNumber(), name, adress, price, discount);
                 break;
         }
-        PriceCalculator.calculatePrice(shop.getTicket(Ticket.getTicketNumber()-1));
+        shop.tickets[Ticket.getTicketNumber()-1].setFinallyPrice(PriceCalculator.calculatePrice(shop.getTicket(Ticket.getTicketNumber()-1)));
     }
 
     private void showTicketList() {
